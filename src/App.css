@@ -1,38 +1,12 @@
-.App {
-  text-align: center;
+.bg-img{
+  background-image: url(https://dv-website.s3.amazonaws.com/uploads/2019/05/jz_csweather_060619.jpg);
+  background-repeat: repeat-x;
+  
+}
+#react-logo {
+  color: #00d8ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color-orange{
+  color: rgba(255, 115, 0, 0.952);
 }

@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 export class Weather extends Component {
   componentDidMount(){
     this.props.fetchWeather(this.props.match.params);
-
     console.log("Did Mounts",this.props.match.params)
   }
   render() {

@@ -6,7 +6,6 @@ export class Landing extends Component {
     render() {
         return (
             <div>
-                <SearchForm />
                 <WeatherContainer />              
             </div>
         )

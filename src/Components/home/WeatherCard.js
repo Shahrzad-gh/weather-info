@@ -10,7 +10,7 @@ export default class WeatherCard extends Component {
         return (
 
           <div className="col">
-            <div className="card bg-info lighte text-light align-items-center">
+            <div className="card bg-warning text-light align-items-center">
               <h4>Local Weather Report</h4>
               <br/>
               <Moment unix>{time}</Moment>

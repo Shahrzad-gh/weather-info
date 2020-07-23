@@ -14,7 +14,7 @@ export class WeatherContainer extends Component {
       let content = ''
         
        content = forecast.cod === 200
-      ? <WeatherCard weather={forecast.weather} time={forecast.dt} toCelcious={this.toCelcious(forecast.main.temp)}/>
+      ? <WeatherCard weather={forecast.weather} wind={forecast.wind} time={forecast.dt} toCelcious={this.toCelcious(forecast.main.temp)}/>
       :null;
       console.log("content", content)
     return (

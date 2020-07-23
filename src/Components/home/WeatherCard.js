@@ -6,6 +6,7 @@ export default class WeatherCard extends Component {
         const {weather} = this.props;
         const {toCelcious} = this.props;
         const {time} = this.props
+        const {wind}=this.props;
         console.log("weather",weather);
         return (
 
@@ -18,6 +19,7 @@ export default class WeatherCard extends Component {
              <div className="card-body">
                 <h5><strong>{toCelcious} C</strong></h5>
                 <h6>{weather[0].main}</h6>
+                <p>Speed: {wind.speed}</p>
               </div>  
 
           {/* <div className="col-md-3 ">

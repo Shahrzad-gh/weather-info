@@ -21,13 +21,13 @@ onSubmit = e => {
               <i className="fas fa-sun" /> &nbsp;WeatherLand
             </div>            
           </div>
-        <form class="form-inline col-lg-10" onSubmit={this.onSubmit}>
-          <input class="form-control mr-sm-2 col-lg-10" 
+        <form className="form-inline col-lg-10" onSubmit={this.onSubmit}>
+          <input className="form-control mr-sm-2 col-lg-10" 
             type="search" 
             placeholder="Search location ... " 
             aria-label="Search" 
             onChange={this.onChange}/>
-          <button class="btn bg-light my-2 my-sm-0" type="submit">Search</button>
+          <button className="btn bg-light my-2 my-sm-0" type="submit">Search</button>
         </form>
         </div>
       </nav>

@@ -1,12 +1,32 @@
-.bg-img{
+.bg-img {
   background-image: url(https://dv-website.s3.amazonaws.com/uploads/2019/05/jz_csweather_060619.jpg);
   background-repeat: repeat-x;
-  
 }
 #react-logo {
   color: #00d8ff;
 }
 
-.color-orange{
+.color-orange {
   color: rgba(255, 115, 0, 0.952);
+}
+.tempeture {
+  color: white;
+  background-color: #00d8ff;
+  margin: 15px;
+}
+.forecast {
+  color: white;
+  background-color: #00d8ff;
+  margin: 15px;
+}
+.weatherCard .row {
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.forecast p {
+  margin-bottom: 0;
+}
+.tempeture p {
+  margin-bottom: 0;
 }

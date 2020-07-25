@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import WeatherCard from './WeatherCard';
-
 export class WeatherContainer extends Component {
-  toCelcious = (temp) =>{
-    console.log("to Celcious",temp -273.15)
-    return Math.round(temp -273.15);
-  }
+
   render() {
       const {forecast} = this.props;
       console.log("forecast", forecast)
@@ -14,24 +10,12 @@ export class WeatherContainer extends Component {
       let content = ''
         
        content = forecast.cod === 200
-      ? <WeatherCard weather={forecast.weather} wind={forecast.wind} time={forecast.dt} toCelcious={this.toCelcious(forecast.main.temp)}/>
+      ? <WeatherCard forecast={forecast}/>
       :null;
       console.log("content", content)
     return (
-      <div className="container mt-2 mb-2">
-        <div className="row">
-          <div className="col-md-6 mb-2">
-          {content}
-          </div>
-          <div className="col-md-6 mb-2">
-          {content}
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-12">
-          {content}
-          </div>
-        </div>
+      <div className="weatherContainer container bg-info mt-2 mb-2">
+        {content}
       </div>
     );
   }

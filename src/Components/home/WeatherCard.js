@@ -1,60 +1,79 @@
 import React, { Component } from 'react'
 import Moment from 'react-moment';
-export default class WeatherCard extends Component {
-    render() {
-      console.log("props", this.props)
-        const {weather} = this.props;
-        const {toCelcious} = this.props;
-        const {time} = this.props
-        const {wind}=this.props;
-        console.log("weather",weather);
+import moment from 'moment';
+export default function WeatherCard(props) {
+      console.log("props", props)
+        const {forecast} = props;
+        const {dt, wind, weather, main, rain, snow} = forecast;
+        const dayName = moment(moment.unix(dt).utc()._d).format('dddd');
+        const date= moment(moment.unix(dt).utc()._d).format("MMM Do YY")
+        console.log("t",moment(moment.unix(dt).utc()._d).format("MMM Do YY"));
+
+        function toCelcious(temp){
+          console.log("to Celcious",temp -273.15)
+          return Math.round(temp -273.15);
+        }
+
         return (
 
-          <div className="col">
-            <div className="card bg-warning text-light align-items-center">
-              <h4>Local Weather Report</h4>
-              <br/>
-              <Moment unix>{time}</Moment>
-              {/* <i className="fas fa-cloud fa-2x p-2"></i> */}
-             <div className="card-body">
-                <h5><strong>{toCelcious} C</strong></h5>
-                <h6>{weather[0].main}</h6>
-                <p>Speed: {wind.speed}</p>
-              </div>  
+              <div className="weatherCard">
+                <div className="row">
+          <div className="tempeture col-md-4 mb-2">
+            <div className="row">
+            <div className="col-md-4">
+              <h1>{forecast.name}</h1>
+              </div>
+              <div className="col-md-4">
+                <div className="row">
+                <p>
+                  <i class="fas fa-arrow-circle-down"></i>
+                  {toCelcious(main.temp_min)}
+                </p>
+              <p>
+              <i class="fas fa-arrow-circle-up"></i>
 
-          {/* <div className="col-md-3 ">
-            <div className="card bg-light">
-              <h4>TODAY</h4>
-              <i></i>
-              <div className="card-body">
-                <h3>Tempture</h3>
-                <h6>Weather</h6>
-              </div>  
+                {toCelcious(main.temp_max)}
+                </p>
+                </div>
+
+              </div>
             </div>
+            <div className="row">
+              <div className="col-md-5 p-3">
+              <p>{dayName}</p>
+              <p>{date}</p>
+              <div className="row">
+              <p>wind {wind.speed} km/h</p>
+              </div>
+              <div className="row">
+              {rain && (
+                <>
+                <p>icon</p>
+                <p>30%</p>
+                </>
+                )}
+              {snow && (
+                <>
+                <p>icon</p>
+                <p>30%</p>
+                </>
+                )}
+              </div>
+              </div>
+              <div className="col-md-3">
+                <p>icon</p>
+                <p>{weather[0].description}</p>
+              </div>
+              <div className="col-md-4">
+                <h4>{toCelcious(main.temp)}&#8451;</h4>
+              </div>
+            </div>
+            
           </div>
-          <div className="col-md-3 ">
-            <div className="card bg-light">
-              <h4>TONIGHT</h4>
-              <i></i>
-              <div className="card-body">
-                <h3>Tempture</h3>
-                <h6>Weather</h6>
-              </div>  
-            </div>
-          </div>
-          <div className="col-md-3 ">
-            <div className="card bg-light">
-              <h4>TOMMOROW</h4>
-              <i></i>
-              <div className="card-body">
-                <h3>Tempture</h3>
-                <h6>Weather</h6>
-              </div>  
-            </div>
-          </div> */}
-          {/* <a href="/" className="btn- btn-primary text-center col-md-10 mt-3 p-2">See More ...</a> */}
+          <div className="forecast col-md-4 mb-2"><p>Forecast</p></div>
+        </div> 
         </div>
-      </div>
+
         )
     }
-}
+

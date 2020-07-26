@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import {searchCity, fetchWeather} from '../../actions/searctActions';
+import {searchCity, fetchWeather, forecastWeather} from '../../actions/searctActions';
 import {connect} from 'react-redux';
 class Navbar extends Component {
   onChange = e => {
@@ -11,6 +11,7 @@ onSubmit = e => {
   e.preventDefault();
   console.log(this.props)
   this.props.fetchWeather(this.props.text)
+  this.props.forecastWeather(this.props.text)
 }
   render(){
   return (
@@ -37,4 +38,4 @@ onSubmit = e => {
 const mapStateToProps = state => ({
   text: state.forecast.text
 })
-export default connect(mapStateToProps, {searchCity, fetchWeather})(Navbar);
+export default connect(mapStateToProps, {searchCity, fetchWeather, forecastWeather})(Navbar);

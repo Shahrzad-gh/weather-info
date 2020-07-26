@@ -1,2 +1,3 @@
 export const SEARCH_CITY = 'SEARCH_CITY';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
+export const FORECAST_WEATHER = 'FORECAST_WEATHER';

@@ -15,7 +15,7 @@ export class Landing extends Component {
     componentDidMount(){
         Axios.get(`http://newsapi.org/v2/top-headlines?country=us&apiKey=${NewsAPI}`)
         .then((response)=> { this.setState({news: response.data});
-            console.log("success", this.state.news )}
+            console.log("news update success", this.state.news )}
             ).catch((err)=> console.log("something wromg", err))
     }
     render() {

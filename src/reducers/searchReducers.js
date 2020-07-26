@@ -1,7 +1,8 @@
-import {SEARCH_CITY, FETCH_WEATHER} from '../actions/types';
+import {SEARCH_CITY, FETCH_WEATHER, FORECAST_WEATHER} from '../actions/types';
 
 const initialState = {
     text: "",
+    weather : [],
     forecast : [],
 }
 
@@ -13,6 +14,11 @@ export default function(state = initialState, action){
                 text: action.payload,
             }
         case FETCH_WEATHER:
+            return{
+                ...state,
+                weather: action.payload,
+            }
+        case FORECAST_WEATHER:
             return{
                 ...state,
                 forecast: action.payload,

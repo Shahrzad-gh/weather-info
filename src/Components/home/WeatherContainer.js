@@ -16,10 +16,11 @@ export class WeatherContainer extends Component {
       ? 
       <>
       <WeatherCard weather={weather}/>
-      {setTimeout(function (){
+      <ForecastCard forecast={forecast}/>
+      {/* {setTimeout(function (){
         return 
-        return (<ForecastCard forecast={forecast}/>)
-      },2000)}
+        return ()
+      },2000)} */}
       </>
       :null;
       console.log("content", content)

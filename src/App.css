@@ -21,6 +21,10 @@
   color: white;
   background-color: #00d8ff;
   margin: 15px;
+  border-radius: 15px;
+  padding: 5px;
+  width: auto;
+  text-align: center;
 }
 .weatherCard .row {
   flex-wrap: wrap;

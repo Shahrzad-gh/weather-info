@@ -9,12 +9,13 @@ export const searchCity = text => dispatch => {
     })
 }
 export const fetchWeather = text => dispatch => {
+
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${APIKey}`)
     .then(response => dispatch({
         type: FETCH_WEATHER,
         payload: response.data
-    }, console.log("weather search Success")))
-    .catch(err => console.log("search error",err))
+    }, console.log("weather search Success",response.data)))
+    .catch(err => console.log("search error",err));
 }
 
 export const forecastWeather = text => dispatch =>{

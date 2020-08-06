@@ -17,10 +17,6 @@ export class WeatherContainer extends Component {
       <>
       <WeatherCard weather={weather}/>
       <ForecastCard forecast={forecast}/>
-      {/* {setTimeout(function (){
-        return 
-        return ()
-      },2000)} */}
       </>
       :null;
       console.log("content", content)

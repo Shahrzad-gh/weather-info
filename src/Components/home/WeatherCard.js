@@ -162,20 +162,20 @@ export default function WeatherCard(props) {
                 )}
               </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-4 p-0">
                 <p>
-                  <img 
+                  <img width="200" height="200"
                   src={weatherIcon(weather.weather[0].id)}
                   alt="icon"
                   />
                 </p>
               </div>
-              <div className="col-md-4">
-                <h4>{toCelcious(weather.main.temp)}&#8451;</h4>
+              <div className="col-md-3">
+                <h3>{toCelcious(weather.main.temp)}&#8451;</h3>
               </div>
             </div>
             <div className="row">
-            <p>{weather.weather[0].description}</p>
+            <p style={{fontSize:30}}>{weather.weather[0].description}</p>
             </div>
             
           </div>

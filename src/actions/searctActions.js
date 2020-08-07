@@ -19,7 +19,7 @@ export const fetchWeather = text => dispatch => {
 }
 
 export const forecastWeather = text => dispatch =>{
-    axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${text}&appid=${APIKey}`)
+    axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${text}&appid=${APIKey}`)
     .then(response => dispatch({
         type: FORECAST_WEATHER,
         payload: response.data

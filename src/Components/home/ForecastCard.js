@@ -114,15 +114,18 @@ export default function ForecastCard(props) {
 
 
     return (
-        <div className="forecast">
-          <p style={{fontSize:40, fontWeight: 500}}>Forecast</p>
-            <div className="row">
-                    {list && list.map((index)=>
-                        <div className="forecast col-md-2 mb-2" key={index.dt}>
+        <div className="forecast" >
+          <p style={{fontSize:30, fontWeight: 500}}>Forecast</p>
+            <div className="row" style={{textAlign:"center"}}>
+                    {list && list.map((index) =>
+                        <div className="forecast col-md-1 p-5 mb-2" key={index.dt} >
                             {moment(moment.unix(index.dt).utc()._d).format('dddd')}
-                            <img width="120" height="120" src={weatherIcon(index.weather[0].id)} alt="icon"/>
-                            <div>{Math.round((index.main.temp) -273.15)}&#8451;</div>
-                        </div>   
+                            <div>
+                              <img width="50" height="50" src={weatherIcon(index.weather[0].id)} alt="icon"/>
+                            </div>  
+                            <div>
+                              {Math.round((index.temp.day) -273.15)}&#8451;</div>
+                        </div> 
                  
                 )}
             </div>

@@ -23,7 +23,7 @@ onSubmit = e => {
             </div>            
           </div>
         <form className="form-inline col-lg-10" onSubmit={this.onSubmit}>
-          <input className="form-control mr-sm-2 col-lg-10" 
+          <input className="form-control mr-2 col-sm-8 col-md-8 col-lg-10" 
             type="search" 
             placeholder="Search location ... " 
             aria-label="Search" 

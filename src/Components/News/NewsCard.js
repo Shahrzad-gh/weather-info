@@ -13,7 +13,9 @@ export default function NewsCard(props) {
         <p>author: {article.author}</p>
             <p>{article.publishedAt}</p>
         {/* <p className="card-text">{article.description}</p> */}
-        <a href={article.url} style={{color:"white"}} className="btn btn-primary">Read More...</a>
+        <div className="card-body">
+        <a href={article.url} style={{color:"white"}} className="btn btn-primary card-link">Read More...</a>
+          </div>
       </div>
     </div>
         </div>

@@ -129,12 +129,12 @@ export default function WeatherCard(props) {
                 <div className="row">
                 <p>
                   <i className="fas fa-arrow-circle-down"></i>
-                  {toCelcious(weather.main.temp_min)}
+                  &nbsp;{toCelcious(weather.main.temp_min)}&#8451;
                 </p>
               <p>
               <i className="fas fa-arrow-circle-up"></i>
 
-                {toCelcious(weather.main.temp_max)}
+              &nbsp;{toCelcious(weather.main.temp_max)}&#8451;
                 </p>
                 </div>
 
